@@ -1,0 +1,78 @@
+.data
+
+multiplyer: .word 16384
+one: .word 1
+
+.text
+
+li a7, 5 		#Take in value from user
+ecall
+
+mv s3, a0 		#Move value to x1 register
+
+lw s0, multiplyer
+
+lw t0, one 		# Sets initial guess (t0) to 256
+slli t0, t0, 8
+slli t0, t0, 14
+
+lw t3, one 		# Sets initial step (t3) to 128
+slli t3, t3, 7
+slli t3, t3, 14
+
+
+Cal_hx2:
+mul t1, t0, t0 		# Finds t0^2 lower bits
+mulhu t5, t0, t0 	# Finds t0^2 higher bits
+srli t2, t1, 14 	# Takes 14 most right bits from lower
+slli s9, t5, 18		# Takes 18 most left bits of higher
+or t1, t2, s9 		# Ors the lower and higher bits
+mul t1, t1, s0 		# Multiplies the result by multiplayer
+
+
+#______________ Exit case 1: Checks to see if guess is exactly 1 away from expected result
+addi t6, t0, 1
+mul t6, t6, t6
+mul t6, t6, s0
+beq t6, s3, exitflash
+
+#______________ Exit case 2: Checks to see if guess is equal to expected result
+beq t1, s3, exit
+
+#______________ Exit case 1: Checks to see if step size is 0
+addi s11, zero, 0
+beq t3, s11, exit
+
+#______________ Exit case 1: Checks to see if guess^2 and user entry have a 1 bit difference
+sub s10, s3, t1
+srli s10, s10, 1
+beq s10, s11, exit
+
+sub s10, t1, s3
+srli s10, s10, 1
+beq s10, s11, exit
+
+# Subs/Adds if no exit conditions are met
+bgt t1, s3, dropit
+blt t1, s3, raiseit
+
+dropit: 		# Subtracts guess by step size
+sub t0,t0,t3
+srli t3, t0, 1 		#step size t0/2
+j Cal_hx2
+
+raiseit: 		# Adds guess by step size
+add t0, t0, t3
+srli t3, t0, 1 		#step size t0/2
+j Cal_hx2
+
+exitflash:
+addi t0, t0, 1
+
+exit:
+srli t0, t0, 7
+mul t0, t0, s0
+li a7, 1 		#Print the final value to user
+mv a0, t0
+ecall
+	
