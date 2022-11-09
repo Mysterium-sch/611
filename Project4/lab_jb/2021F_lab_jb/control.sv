@@ -1,11 +1,11 @@
-module control (input logic [31:0] instr,
+module control (input logic [31:0] instr, input logic [0:0] stall_EX,
 
 		output logic [3:0] aluop,
 		output logic [0:0] alusrc,
 		output logic [1:0] regsel,
 		output logic [0:0] regwrite,
-		output logic [0:0] gpio_we
-		output logic [0:0] branch);
+		output logic [0:0] gpio_we,
+		output logic [0:0] stall_FETCH);
 	
 // Instruction Varibles
 	logic [6:0] op; 
@@ -25,12 +25,11 @@ always_comb begin
 	//defaults
 	aluop = 4'bX;
 	alusrc=1'bX;
-	regsel = 2'b0;
-	regwrite = 1'b1;
-    gpio_we = 1'b0;
-	branch = 1'bX;
+	regsel = 2'bX;
+	regwrite = 1'bX;
+    gpio_we = 1'bX;
 
-
+if(stall == 1'b0) begin
 
 
 if(instrT == 3'b0) begin //csrrw
@@ -252,51 +251,50 @@ else if(instrT == 3'b11) begin // U type
 			end
 end
 else if(instrT == 3'b100) begin //Branch
-	branch = 1'b1;
 	if(funct3 == 3'b000) begin //BEQ
-		aluop = 4'b1010;
-    	alusrc=1'b0;
-        regsel = 2'b10;
-        regwrite = 1'b0;
-        gpio_we = 1'b0;
+			aluop = 4'b0100;
+            alusrc=1'b0;
+            regsel = 2'b10;
+            regwrite = 1'b1;
+            gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b001) begin //BNE
-		aluop = 4'b1010;
-    	alusrc=1'b0;
-        regsel = 2'b10;
-        regwrite = 1'b1;
-        gpio_we = 1'b0;
+			aluop = 4'b0100;
+            alusrc=1'b0;
+            regsel = 2'b10;
+            regwrite = 1'b1;
+            gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b100) begin //BLT
-		aluop = 4'b1010;
-    	alusrc=1'b0;
-        regsel = 2'b10;
-        regwrite = 1'b1;
-        gpio_we = 1'b0;
+			aluop = 4'b1100;
+            alusrc=1'b0;
+            regsel = 2'b10;
+            regwrite = 1'b1;
+            gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b101) begin //BGE
-		aluop = 4'b1010;
-    	alusrc=1'b0;
-        regsel = 2'b10;
-        regwrite = 1'b1;
-        gpio_we = 1'b0;
+			aluop = 4'b1100;
+            alusrc=1'b0;
+            regsel = 2'b10;
+            regwrite = 1'b1;
+            gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b110) begin //BLTU
-		aluop = 4'b1010;
-    	alusrc=1'b0;
-        regsel = 2'b10;
-        regwrite = 1'b1;
-        gpio_we = 1'b0;
+				aluop = 4'b1101;
+                alusrc=1'b0;
+                regsel = 2'b10;
+                regwrite = 1'b1;
+                gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b111) begin //BGEU
-		aluop = 4'b1010;
-    	alusrc=1'b0;
-        regsel = 2'b10;
-        regwrite = 1'b1;
-        gpio_we = 1'b0;
+				aluop = 4'b1101;
+                alusrc=1'b0;
+                regsel = 2'b10;
+                regwrite = 1'b1;
+                gpio_we = 1'b0;
 	end
 end
-else if(instrT == 3'b101) begin //J
+else if(instrT == 3'b101) begin //Jalr
 
 		aluop = 4'b1010;
     	alusrc=1'b0;
@@ -305,5 +303,14 @@ else if(instrT == 3'b101) begin //J
         gpio_we = 1'b0;
 
 end
+else if (instrT == 3'b110) begin //Jal
+		aluop = 4'b1010;
+    	alusrc=1'b0;
+        regsel = 2'b10;
+        regwrite = 1'b1;
+        gpio_we = 1'b0;
 end
+end
+end
+
 endmodule

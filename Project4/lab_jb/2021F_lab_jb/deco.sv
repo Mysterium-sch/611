@@ -31,11 +31,14 @@ module deco (input logic [31:0] instr,
                         instrT = 3'b11; // 3
                 end
 		if(op == 7'b1100011) begin //branch
-			instrT = 3'b100;
+			instrT = 3'b100; // 4
 		end
-		if(op == 7'b1100111) begin //J type
-			instr = 3'b101;
+		if(op == 7'b1100111) begin //Jalr type
+			instr = 3'b101; // 5
 		end
+                if(op == 7'b1101111) begin //jal type
+                        instrT = 3'b110; // 6
+                end
         end
 
 endmodule
