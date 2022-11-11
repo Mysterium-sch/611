@@ -97,37 +97,10 @@ assign mux1 = (alusrc_EX == 2'b1) ? se : readdata2;
 
 // intialize alu
 alu alu1 (.A(readdata1), .B(mux1), .op(aluop_EX), .R(R_EX), .zero(zero));
-
-
+	assign pcsrc_EX = (instr_EX[6:0} == 7'b1100011) ? (alup_EX == 4'b0100 ? 2'b01 : (alup_EX == 4'b1100 ? (R_EX == 32'b0 ? 2'b01 : (R_EX == 32'b1 ? 2'b1 : 2'b0)) : (alup_EX == 4'b 1101? ((R_EX == 32'b0 ? 2'b01 : (R_EX == 32'b1 ? 2'b1 : 2'b0))) : (2'b0)))) : (instr_EX[6:0] == 7'b1100111 ? 2'b11 : (instr_EX[6:0] == 7'b1101111) ? 2'b10 : 2'b0));
+	assign stall_EX = pcsrc_EX[2:0] == 2'b0 ? 1'b0 : 1'b1;
 // Write back stage
 always_ff @(posedge clk) begin
-
-	// set pcsrc_EX
-	
-	if (instr_EX[6:00] == 7'b1100011) begin
-		if(alup_EX == 4'b0100) begin
-			if(R_EX == 32'b0)
-				pcsrc_EX <= 2'b01;
-			if(R_EX !== 32'b0)
-				pcsrc_EX <= 2'b01;
-		end else if (alup_EX == 4'b1100) begin
-			if(R_EX == 32'b0)
-				pcsrc_EX <= 2'b01;
-			if(R_EX == 32'b1)
-				pcsrc_EX <= 2'b01;
-		end else if (alup_EX == 4'b1101) begin
-			if(R_EX == 32'b0)
-				pcsrc_EX <= 2'b01;
-			if(R_EX == 32'b1)
-				pcsrc_EX <= 2'b01;
-		end 
-		end else if (instr_EX[6:0] == 7'b1100111) begin
-			pcsrc_EX <= 2'b11;
-		end else if (instr_EX[6:0] = 7'b1101111) begin
-			pcsrc_EX <= 2'b10;
-		end else begin
-		pcsrc_EX <= 2'b0;
-	end
 	
 	R_WB <= R_EX;
 	instr_WB <= instr_EX;
