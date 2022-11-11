@@ -29,7 +29,9 @@ always_comb begin
 	regwrite = 1'bX;
     gpio_we = 1'bX;
 
-if(stall == 1'b0) begin
+stall_FETCH = stall_EX;
+
+if(stall_FETCH == 1'b0) begin
 
 
 if(instrT == 3'b0) begin //csrrw
@@ -255,42 +257,42 @@ else if(instrT == 3'b100) begin //Branch
 			aluop = 4'b0100;
             alusrc=1'b0;
             regsel = 2'b10;
-            regwrite = 1'b1;
+            regwrite = 1'b0;
             gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b001) begin //BNE
 			aluop = 4'b0100;
             alusrc=1'b0;
             regsel = 2'b10;
-            regwrite = 1'b1;
+            regwrite = 1'b0;
             gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b100) begin //BLT
 			aluop = 4'b1100;
             alusrc=1'b0;
             regsel = 2'b10;
-            regwrite = 1'b1;
+            regwrite = 1'b0;
             gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b101) begin //BGE
 			aluop = 4'b1100;
             alusrc=1'b0;
             regsel = 2'b10;
-            regwrite = 1'b1;
+            regwrite = 1'b0;
             gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b110) begin //BLTU
 				aluop = 4'b1101;
                 alusrc=1'b0;
                 regsel = 2'b10;
-                regwrite = 1'b1;
+                regwrite = 1'b0;
                 gpio_we = 1'b0;
 	end
 	if(funct3 == 3'b111) begin //BGEU
 				aluop = 4'b1101;
                 alusrc=1'b0;
                 regsel = 2'b10;
-                regwrite = 1'b1;
+                regwrite = 1'b0;
                 gpio_we = 1'b0;
 	end
 end
