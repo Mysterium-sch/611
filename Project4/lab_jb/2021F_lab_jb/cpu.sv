@@ -41,17 +41,16 @@ logic [11:0] PC_EX = 12'd0;
 logic [0:0] stall_EX;
 logic [0:0] stall_FETCH;
 logic [1:0] pcsrc_EX;
-logic [31:0] jal_addr_EX;
 
 //branch
-logic [31:0] branch_addr_EX;
-logic [11:0] branch_offset_EX;
+logic [11:0] branch_addr_EX;
+logic [12:0] branch_offset_EX;
 //jal
-logic [31:0] jal_addr_EX;
-logic [11:0] jal_offset_EX;
+logic [11:0] jal_addr_EX;
+logic [20:0] jal_offset_EX;
 //jalr
-logic [31:0] jalr_addr_EX;
-logic [11:0] jalr_offset_EX;
+logic [11:0] jalr_addr_EX;
+logic [12:0] jalr_offset_EX;
 
 
 
@@ -61,7 +60,7 @@ initial
 // Fetch stage
 always_ff @(posedge clk) begin 
 	if (~rst_n) begin 
-		PC_FETCH <= 12'd0; 
+		PC_FETCH <= 12'd0;
 		instr_EX <= 32'd0; 
 	end else begin
 		// branch cal
@@ -78,16 +77,16 @@ end
 control control1 (.instr(instr_EX), .stall_EX(stall_EX), .stall_FETCH(stall_FETCH), .aluop(aluop_EX), .alusrc(alusrc_EX), .regsel(regsel_EX), .regwrite(regwrite_EX), .gpio_we(gpio_we_EX)); 
 
 // branch cal
-branch_offset_EX = {instr_EX[31], instr_EX[7], instr_EX[30:25], instr_EX[11:8], 1'b0};
-branch_addr_EX = PC_EX + {branch_offset_EX[12], branch_offset_EX[12:2]};
+assign branch_offset_EX = {instr_EX[31], instr_EX[7], instr_EX[30:25], instr_EX[11:8], 1'b0};
+assign branch_addr_EX = PC_EX + {branch_offset_EX[12], branch_offset_EX[12:2]};
 
 // Jal cal
-jal_offset_EX = {instr_EX[31],instr_EX[19:12],instr_EX[20],instr_EX[30:21],1’b0};
-jal_addr_EX = PC_EX + jal_offset_EX[13:2];
+assign jal_offset_EX = {instr_EX[31], instr_EX[19:12], instr_EX[20], instr_EX[30:21], 1'b0};
+assign jal_addr_EX = PC_EX + jal_offset_EX[13:2];
 
 //Jalr cal
-jalr_offset_EX = instr_EX[31:20];
-jalr_addr_EX = readdata1 + {{2{jalr_offset_EX[11]}},jalr_offset_EX[11:2]};
+assign jalr_offset_EX = instr_EX[31:20];
+assign jalr_addr_EX = readdata1 + {{2{jalr_offset_EX[11]}},jalr_offset_EX[11:2]};
 
 
 // Sign extend for alu
@@ -96,9 +95,15 @@ assign mux1 = (alusrc_EX == 2'b1) ? se : readdata2;
 
 
 // intialize alu
+logic [6:0] op;
+assign op = instr_EX[6:0];
 alu alu1 (.A(readdata1), .B(mux1), .op(aluop_EX), .R(R_EX), .zero(zero));
-	assign pcsrc_EX = (instr_EX[6:0} == 7'b1100011) ? (alup_EX == 4'b0100 ? 2'b01 : (alup_EX == 4'b1100 ? (R_EX == 32'b0 ? 2'b01 : (R_EX == 32'b1 ? 2'b1 : 2'b0)) : (alup_EX == 4'b 1101? ((R_EX == 32'b0 ? 2'b01 : (R_EX == 32'b1 ? 2'b1 : 2'b0))) : (2'b0)))) : (instr_EX[6:0] == 7'b1100111 ? 2'b11 : (instr_EX[6:0] == 7'b1101111) ? 2'b10 : 2'b0));
-	assign stall_EX = pcsrc_EX[2:0] == 2'b0 ? 1'b0 : 1'b1;
+	assign pcsrc_EX = (instr_EX[6:0] == 7'b1100011) ? 
+					((instr_EX[14:12] == 3'b0) ? (R_EX == 32'b0 ? 2'b1 : 2'b0) : ((instr_EX[14:12] == 3'b1) ? (R_EX !== 32'b0 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b100) ? (R_EX == 32'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b101) ? (R_EX == 32'b0 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b110) ? (R_EX == 32'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b111) ? (R_EX == 32'b0 ? 2'b1 : 2'b0) : 2'b0))
+								: ((instr_EX[6:0] == 7'b1100111) ? 2'b11 : ((instr_EX[6:0] == 7'b1101111) ? 2'b10 : 2'b0));
+	
+	assign stall_EX = (pcsrc_EX[1:0] == 2'b0) ? 1'b0 : 1'b1;
+
 // Write back stage
 always_ff @(posedge clk) begin
 	
@@ -124,7 +129,9 @@ end
 // Mux for regfile
 assign mux2 = (regsel_WB == 2'b11) ? PC_EX : ((regsel_WB == 2'b10) ? R_WB : ((regsel_WB == 2'b01) ? luiHelper : instr_in));
 
-PC_mux= (pcsrc_EX == 2'b0) ? (PC_FETCH + 1'b1) : ((pcsrc_EX == 2'b1) ? branch_addr_EX : ((pcsrc_EX == 2'b10) ? jal_addr_EX : jalr_addr_EX));
+logic [11:0] holder;
+assign holder = PC_FETCH + 1'b1;
+assign PC_mux = (pcsrc_EX == 2'b11) ? (jalr_addr_EX) : ((pcsrc_EX == 2'b1) ? branch_addr_EX : ((pcsrc_EX == 2'b10) ? jal_addr_EX : holder));
 		
 // Intialize regfile
 regfile regfile1 (.clk(clk), .rst(~rst_n), .we(regwrite_WB), .readaddr1(instr_EX[19:15]), .readaddr2(instr_EX[24:20]), .writeaddr(instr_WB[11:7]), .writedata(mux2), .readdata1(readdata1), .readdata2(readdata2));

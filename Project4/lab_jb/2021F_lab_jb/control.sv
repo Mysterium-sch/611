@@ -28,10 +28,9 @@ always_comb begin
 	regsel = 2'bX;
 	regwrite = 1'bX;
     gpio_we = 1'bX;
+	stall_FETCH = stall_EX;
 
-stall_FETCH = stall_EX;
-
-if(stall_FETCH == 1'b0) begin
+if(stall_FETCH != 1'b1) begin
 
 
 if(instrT == 3'b0) begin //csrrw
