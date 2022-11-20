@@ -53,7 +53,7 @@ initial begin
 	KEY = 4'b0; #5
 	
 	KEY = 4'b1111;
-	#450;
+	#300;
 	if (HEX0 == 7'b0010010) $display (HEX0);
 	KEY = 4'b0;
 end

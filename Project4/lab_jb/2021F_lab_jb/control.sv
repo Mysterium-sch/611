@@ -4,8 +4,7 @@ module control (input logic [31:0] instr, input logic [0:0] stall_EX,
 		output logic [0:0] alusrc,
 		output logic [1:0] regsel,
 		output logic [0:0] regwrite,
-		output logic [0:0] gpio_we,
-		output logic [0:0] stall_FETCH);
+		output logic [0:0] gpio_we);
 	
 // Instruction Varibles
 	logic [6:0] op; 
@@ -28,10 +27,8 @@ always_comb begin
 	regsel = 2'bX;
 	regwrite = 1'bX;
     gpio_we = 1'bX;
-	stall_FETCH = stall_EX;
 
-if(stall_FETCH != 1'b1) begin
-
+if(stall_EX == 1'b0) begin
 
 if(instrT == 3'b0) begin //csrrw
 		if(imm12 == 12'hf02) begin // HEX
@@ -299,7 +296,7 @@ else if(instrT == 3'b101) begin //Jalr
 
 		aluop = 4'b1010;
     	alusrc=1'b0;
-        regsel = 2'b10;
+        regsel = 2'b11;
         regwrite = 1'b1;
         gpio_we = 1'b0;
 
@@ -307,10 +304,14 @@ end
 else if (instrT == 3'b110) begin //Jal
 		aluop = 4'b1010;
     	alusrc=1'b0;
-        regsel = 2'b10;
+        regsel = 2'b11;
         regwrite = 1'b1;
         gpio_we = 1'b0;
 end
+end
+else begin 
+	alusrc = 1'b1;
+	aluop = 4'b0011;
 end
 end
 
