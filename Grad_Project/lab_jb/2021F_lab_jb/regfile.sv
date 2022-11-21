@@ -51,7 +51,6 @@ always_ff @(posedge clk, posedge rst) begin
 		// as a precaution to make sure nothing gets optimized out of the
 		// design.
 		if (we_1 && (writeaddr_1 == 0)) mem[0] <= 0;
-
 		// handle the default case
 		else if (we_1) mem[writeaddr_1] <= writedata_1;
 		
@@ -70,30 +69,18 @@ always_comb begin
 
 	// special case to prevent write bypass from kicking in for reg0
 	if (we_1 && (readaddr1_1 == 0)) readdata1_buf_1 = 0;
-
 	// write-bypass
 	else if (we_1 && (readaddr1_1 == writeaddr_1)) readdata1_buf_1 = writedata_1;
-
 	// default case
 	else readdata1_buf_1 = mem[readaddr1_1];
-
-	if (we_1 && (readaddr2_1 == 0)) readdata2_buf_1 = 0;
-	else if (we_1 && (readaddr2_1 == writeaddr_1)) readdata2_buf_1 = writedata_1;
-	else readdata2_buf_1 = mem[readaddr2_1];
-	
 	
 	// Instruction 2
 	if (we_2 && (readaddr1_2 == 0)) readdata1_buf_2 = 0;
-
 	// write-bypass
 	else if (we_2 && (readaddr1_2 == writeaddr_2)) readdata1_buf_2 = writedata_2;
-
 	// default case
 	else readdata1_buf_2 = mem[readaddr1_2];
 
-	if (we_2 && (readaddr2_2 == 0)) readdata2_buf_2 = 0;
-	else if (we_2 && (readaddr2_2 == writeaddr_2)) readdata2_buf_2 = writedata_2;
-	else readdata2_buf_2 = mem[readaddr2_2];
 end
 
 // connect the output buffers to the output wires

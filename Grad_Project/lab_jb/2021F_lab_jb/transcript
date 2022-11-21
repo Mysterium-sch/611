@@ -12,10 +12,95 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+vlib work
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:15:46 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 16:15:46 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:15:46 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 16:15:46 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:15:46 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 16:15:46 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:15:46 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv 
+# -- Compiling module deco
+# 
+# Top level modules:
+# 	deco
+# End time: 16:15:46 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:15:46 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv 
+# -- Compiling module hexdriver
+# 
+# Top level modules:
+# 	hexdriver
+# End time: 16:15:46 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:15:46 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 16:15:46 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:15:46 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv 
+# -- Compiling module simtop
+# 
+# Top level modules:
+# 	simtop
+# End time: 16:15:47 on Nov 21,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:15:47 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 16:15:47 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 vsim -voptargs=+acc work.simtop
 # vsim -voptargs="+acc" work.simtop 
-# Start time: 15:42:14 on Nov 21,2022
+# Start time: 16:15:54 on Nov 21,2022
 # ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vopt-2685) [TFMPC] - Too few port connections for 'regfile1'.  Expected 16, found 14.
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vopt-2718) [TFMPC] - Missing connection for port 'readaddr1_2'.
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vopt-2718) [TFMPC] - Missing connection for port 'readaddr2_1'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
 # Loading sv_std.std
 # Loading work.simtop(fast)
 # Loading work.top(fast)
@@ -25,315 +110,713 @@ vsim -voptargs=+acc work.simtop
 # Loading work.alu(fast)
 # Loading work.regfile(fast)
 # Loading work.hexdriver(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv(1).
-#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/top.sv Line: 98
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:00:25 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(49): (vlog-2388) 'se_1' already declared in this scope (cpu) at /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(45).
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(49): (vlog-13311) 'se_1' already declared in this scope ('cpu') with a type.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(50): (vlog-2388) 'mux1_1' already declared in this scope (cpu) at /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(46).
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(50): (vlog-13311) 'mux1_1' already declared in this scope ('cpu') with a type.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(82): (vlog-2730) Undefined variable: 'PC_mux'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(83): (vlog-2730) Undefined variable: 'PC_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(133): (vlog-2730) Undefined variable: 'readdata1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(142): (vlog-2730) Undefined variable: 'PC_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(161): (vlog-2730) Undefined variable: 'pcsrc_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(164): (vlog-2730) Undefined variable: 'instr_WB_1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(164): (vlog-2730) Undefined variable: 'instr_WB_2'.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(164): (vlog-2367) Multiple connections to the same port: readaddr1_1.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(164): (vlog-2367) Multiple connections to the same port: readaddr2_2.
-# End time: 16:00:26 on Nov 21,2022, Elapsed time: 0:00:01
-# Errors: 13, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:01:05 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv 
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 16:01:05 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:01:17 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(82): (vlog-2730) Undefined variable: 'PC_mux'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(83): (vlog-2730) Undefined variable: 'PC_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(133): (vlog-2730) Undefined variable: 'readdata1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(142): (vlog-2730) Undefined variable: 'PC_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(161): (vlog-2730) Undefined variable: 'pcsrc_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(164): (vlog-2730) Undefined variable: 'instr_WB_1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(164): (vlog-2730) Undefined variable: 'instr_WB_2'.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(164): (vlog-2367) Multiple connections to the same port: readaddr1_1.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(164): (vlog-2367) Multiple connections to the same port: readaddr2_2.
-# End time: 16:01:17 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 9, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:01:57 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(82): (vlog-2730) Undefined variable: 'PC_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(132): (vlog-2730) Undefined variable: 'readdata1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(141): (vlog-2730) Undefined variable: 'PC_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(160): (vlog-2730) Undefined variable: 'pcsrc_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(163): (vlog-2730) Undefined variable: 'instr_WB_1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(163): (vlog-2730) Undefined variable: 'instr_WB_2'.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(163): (vlog-2367) Multiple connections to the same port: readaddr1_1.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(163): (vlog-2367) Multiple connections to the same port: readaddr2_2.
-# End time: 16:01:57 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 8, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:02:53 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(84): (vlog-2730) Undefined variable: 'PC_EX'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(115): (vlog-2730) Undefined variable: 'pcsrc_EX_1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(134): (vlog-2730) Undefined variable: 'readdata1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(143): (vlog-2730) Undefined variable: 'PC_EX'.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vlog-2367) Multiple connections to the same port: readaddr1_1.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vlog-2367) Multiple connections to the same port: readaddr2_2.
-# End time: 16:02:53 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 6, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:03:26 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(115): (vlog-2730) Undefined variable: 'pcsrc_EX_1'.
-# ** Error: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(134): (vlog-2730) Undefined variable: 'readdata1'.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vlog-2367) Multiple connections to the same port: readaddr1_1.
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vlog-2367) Multiple connections to the same port: readaddr2_2.
-# End time: 16:03:26 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:04:21 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vlog-2367) Multiple connections to the same port: readaddr2_2.
-# End time: 16:04:22 on Nov 21,2022, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:04:23 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# ** Error (suppressible): /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(165): (vlog-2367) Multiple connections to the same port: readaddr2_2.
-# End time: 16:04:23 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:17 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# 
-# Top level modules:
-# 	cpu
-# End time: 16:06:17 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:18 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# 
-# Top level modules:
-# 	cpu
-# End time: 16:06:18 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:20 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
-# -- Compiling module regfile
-# 
-# Top level modules:
-# 	regfile
-# End time: 16:06:20 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:21 on Nov 21,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
-# -- Compiling module regfile
-# 
-# Top level modules:
-# 	regfile
-# End time: 16:06:21 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+# ** Error (suppressible): (vsim-3839) Variable '/simtop/dut/cpu1/zero', driven via a port connection, is multiply driven. See /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(107).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1/alu1_2 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 108
+# Error loading design
+# End time: 16:15:55 on Nov 21,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 4
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:27 on Nov 21,2022
+# Start time: 16:18:04 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 16:06:27 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:18:04 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:27 on Nov 21,2022
+# Start time: 16:18:04 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 16:06:28 on Nov 21,2022, Elapsed time: 0:00:01
+# End time: 16:18:05 on Nov 21,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:28 on Nov 21,2022
+# Start time: 16:18:05 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 16:06:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:18:05 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:28 on Nov 21,2022
+# Start time: 16:18:05 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv 
 # -- Compiling module deco
 # 
 # Top level modules:
 # 	deco
-# End time: 16:06:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:18:05 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:28 on Nov 21,2022
+# Start time: 16:18:05 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv 
 # -- Compiling module hexdriver
 # 
 # Top level modules:
 # 	hexdriver
-# End time: 16:06:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:18:05 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:28 on Nov 21,2022
+# Start time: 16:18:05 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 16:06:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:18:05 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:28 on Nov 21,2022
+# Start time: 16:18:05 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv 
 # -- Compiling module simtop
 # 
 # Top level modules:
 # 	simtop
-# End time: 16:06:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:18:05 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:06:28 on Nov 21,2022
+# Start time: 16:18:05 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 16:06:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:18:05 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+vsim -voptargs=+acc work.simtop
+# vsim -voptargs="+acc" work.simtop 
+# Start time: 16:18:08 on Nov 21,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(166): (vopt-2685) [TFMPC] - Too few port connections for 'regfile1'.  Expected 16, found 14.
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(166): (vopt-2718) [TFMPC] - Missing connection for port 'readaddr1_2'.
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(166): (vopt-2718) [TFMPC] - Missing connection for port 'readaddr2_1'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+add dataflow sim:/simtop/dut/cpu1/*
+add wave sim:/simtop/dut/cpu1/*
+view -new list
+# .main_pane.list.interior.cs.body
 add wave -position end  sim:/simtop/dut/cpu1/clk
 add wave -position end  sim:/simtop/dut/cpu1/rst_n
-# Load canceled
+add wave -position end  sim:/simtop/dut/cpu1/instr_EX_1
+add wave -position end  sim:/simtop/dut/cpu1/instr_EX_2
+view -new wave
+# .main_pane.wave1.interior.cs.body.pw.wf
+add wave -position insertpoint  \
+sim:/simtop/dut/cpu1/regfile1/mem
+add wave -position 0  sim:/simtop/dut/cpu1/regfile1/clk
+run
+# ** Warning: (vsim-PLI-3406) Too many digits (16) in data on line 1 of file "program.rom". (Max is 8.)    : /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(75)
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Causality operation skipped due to absence of debug database file
+add wave -position end  sim:/simtop/dut/cpu1/pcsrc_EX
+add wave -position end  sim:/simtop/dut/cpu1/PC_FETCH
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+run
+# ** Warning: (vsim-PLI-3406) Too many digits (16) in data on line 1 of file "program.rom". (Max is 8.)    : /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(75)
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1
+add wave -position end  sim:/simtop/dut/cpu1/instr_EX
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+add wave -position end  sim:/simtop/dut/cpu1/inst_ram
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+run
+# ** Warning: (vsim-PLI-3406) Too many digits (16) in data on line 1 of file "program.rom". (Max is 8.)    : /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(75)
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:10:28 on Nov 21,2022
+# Start time: 16:33:17 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 16:10:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:33:17 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:10:28 on Nov 21,2022
+# Start time: 16:33:17 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 16:10:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:33:18 on Nov 21,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:10:28 on Nov 21,2022
+# Start time: 16:33:18 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 16:10:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:33:18 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:10:28 on Nov 21,2022
+# Start time: 16:33:18 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv 
 # -- Compiling module deco
 # 
 # Top level modules:
 # 	deco
-# End time: 16:10:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:33:18 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:10:28 on Nov 21,2022
+# Start time: 16:33:18 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv 
 # -- Compiling module hexdriver
 # 
 # Top level modules:
 # 	hexdriver
-# End time: 16:10:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:33:18 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:10:28 on Nov 21,2022
+# Start time: 16:33:18 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 16:10:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:33:18 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:10:28 on Nov 21,2022
+# Start time: 16:33:18 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv 
 # -- Compiling module simtop
 # 
 # Top level modules:
 # 	simtop
-# End time: 16:10:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:33:18 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 16:10:28 on Nov 21,2022
+# Start time: 16:33:18 on Nov 21,2022
 # vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 16:10:28 on Nov 21,2022, Elapsed time: 0:00:00
+# End time: 16:33:18 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(166): (vopt-2685) [TFMPC] - Too few port connections for 'regfile1'.  Expected 16, found 14.
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(166): (vopt-2718) [TFMPC] - Missing connection for port 'readaddr1_2'.
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(166): (vopt-2718) [TFMPC] - Missing connection for port 'readaddr2_1'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+run
+add wave -position end  sim:/simtop/dut/cpu1/mux2_1
+add wave -position end  sim:/simtop/dut/cpu1/mux2_2
+add wave -position end  sim:/simtop/dut/cpu1/mux1_1
+add wave -position end  sim:/simtop/dut/cpu1/se_1
+add wave -position end  sim:/simtop/dut/cpu1/se_2
+add wave -position end  sim:/simtop/dut/cpu1/R_EX_1
+add wave -position end  sim:/simtop/dut/cpu1/R_EX_2
+add wave -position end  sim:/simtop/dut/cpu1/readdata1_1
+add wave -position end  sim:/simtop/dut/cpu1/readdata1_2
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:43:34 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 16:43:34 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:43:34 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 16:43:34 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:43:34 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 16:43:34 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:43:34 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv 
+# -- Compiling module deco
+# 
+# Top level modules:
+# 	deco
+# End time: 16:43:34 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:43:34 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv 
+# -- Compiling module hexdriver
+# 
+# Top level modules:
+# 	hexdriver
+# End time: 16:43:34 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:43:34 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 16:43:34 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:43:34 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv 
+# -- Compiling module simtop
+# 
+# Top level modules:
+# 	simtop
+# End time: 16:43:34 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:43:34 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 16:43:35 on Nov 21,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+run
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:15 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 16:46:15 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:15 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 16:46:15 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:15 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 16:46:15 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:15 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv 
+# -- Compiling module deco
+# 
+# Top level modules:
+# 	deco
+# End time: 16:46:15 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:15 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv 
+# -- Compiling module hexdriver
+# 
+# Top level modules:
+# 	hexdriver
+# End time: 16:46:15 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:15 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 16:46:16 on Nov 21,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:16 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv 
+# -- Compiling module simtop
+# 
+# Top level modules:
+# 	simtop
+# End time: 16:46:16 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:16 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 16:46:16 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(170): (vopt-2685) [TFMPC] - Too few port connections for 'regfile1'.  Expected 16, found 14.
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(170): (vopt-2718) [TFMPC] - Missing connection for port 'readaddr1_2'.
+# ** Warning: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(170): (vopt-2718) [TFMPC] - Missing connection for port 'readaddr2_1'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:23 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 16:46:23 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:23 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 16:46:23 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:23 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 16:46:23 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:23 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv 
+# -- Compiling module deco
+# 
+# Top level modules:
+# 	deco
+# End time: 16:46:23 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:23 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv 
+# -- Compiling module hexdriver
+# 
+# Top level modules:
+# 	hexdriver
+# End time: 16:46:23 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:23 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 16:46:23 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:23 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv 
+# -- Compiling module simtop
+# 
+# Top level modules:
+# 	simtop
+# End time: 16:46:23 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:46:23 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 16:46:23 on Nov 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 run
-# ** Warning: (vsim-PLI-3406) Too many digits (16) in data on line 1 of file "program.rom". (Max is 8.)    : /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv(58)
-#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1
-# Causality operation skipped due to absence of debug database file
-# End time: 16:12:05 on Nov 21,2022, Elapsed time: 0:29:51
-# Errors: 0, Warnings: 2
+add wave -position 10  sim:/simtop/dut/cpu1/readdata2_1
+add wave -position end  sim:/simtop/dut/cpu1/readdata2_2
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+run
+add wave -position end  sim:/simtop/dut/cpu1/alusrc_EX_2
+add wave -position end  sim:/simtop/dut/cpu1/regwrite_EX_2
+add wave -position end  sim:/simtop/dut/cpu1/regwrite_EX_1
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:58:22 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 16:58:22 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:58:22 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 16:58:22 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:58:22 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 16:58:22 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:58:22 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv 
+# -- Compiling module deco
+# 
+# Top level modules:
+# 	deco
+# End time: 16:58:22 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:58:22 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv 
+# -- Compiling module hexdriver
+# 
+# Top level modules:
+# 	hexdriver
+# End time: 16:58:22 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:58:22 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv 
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 16:58:22 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:58:22 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv 
+# -- Compiling module simtop
+# 
+# Top level modules:
+# 	simtop
+# End time: 16:58:22 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 16:58:22 on Nov 21,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 16:58:22 on Nov 21,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.simtop(fast)
+# Loading work.top(fast)
+# Loading work.cpu(fast)
+# Loading work.control(fast)
+# Loading work.deco(fast)
+# Loading work.alu(fast)
+# Loading work.regfile(fast)
+# Loading work.hexdriver(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (33) for port 'instr_in'. The port definition is at: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv(1).
+#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1 File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+run
+# Break key hit

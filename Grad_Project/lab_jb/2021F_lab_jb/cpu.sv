@@ -1,7 +1,7 @@
 module cpu(input logic clk, input logic rst_n, input logic [31:0] instr_in, output logic [31:0] instr_out); 
 
 // From given cpu file
-logic [31:0] inst_ram [2047:0];
+logic [63:0] inst_ram [2047:0];
 logic [11:0] PC_FETCH = 9'd0; 
 logic [63:0] instr_EX;
 logic [31:0] instr_EX_1;
@@ -32,6 +32,7 @@ logic [0:0] gpio_we_EX_2;
 logic [31:0] readdata1_1;
 logic [31:0] readdata2_1;
 logic [31:0] luiHelper_1;
+
 logic [31:0] readdata1_2;
 logic [31:0] readdata2_2;
 logic [31:0] luiHelper_2;
@@ -41,7 +42,8 @@ logic [31:0] R_EX_1;
 logic [31:0] R_WB_1;
 logic [31:0] R_EX_2;
 logic [31:0] R_WB_2;
-logic zero;
+logic zero_1;
+logic zero_2;
 
 // Devices
 logic [31:0] se_1;
@@ -104,8 +106,8 @@ assign mux1_2 = (alusrc_EX_2 == 2'b1) ? se_2 : readdata2_2;
 
 
 
-alu alu1_1 (.A(readdata1_1), .B(mux1_1), .op(aluop_EX_1), .R(R_EX_1), .zero(zero));
-alu alu1_2 (.A(readdata1_2), .B(mux1_2), .op(aluop_EX_2), .R(R_EX_2), .zero(zero));
+alu alu1_1 (.A(readdata1_1), .B(mux1_1), .op(aluop_EX_1), .R(R_EX_1), .zero(zero_1));
+alu alu1_2 (.A(readdata1_2), .B(mux1_2), .op(aluop_EX_2), .R(R_EX_2), .zero(zero_2));
 
 // intialize alu
 	assign pcsrc_EX = (stall_EX_1 == 1'b1) ? 2'b0 : (instr_EX_1[6:0] == 7'b1100011) ? 
@@ -118,6 +120,9 @@ alu alu1_2 (.A(readdata1_2), .B(mux1_2), .op(aluop_EX_2), .R(R_EX_2), .zero(zero
 
 // Write back stage
 always_ff @(posedge clk) begin
+
+	instr_WB_1 <= instr_EX_1;
+	instr_WB_2 <= instr_EX_2;
 
 	R_WB_1 <= R_EX_1;
 	R_WB_2 <= R_EX_2;
