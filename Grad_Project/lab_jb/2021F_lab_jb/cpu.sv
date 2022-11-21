@@ -6,6 +6,8 @@ logic [11:0] PC_FETCH = 9'd0;
 logic [63:0] instr_EX;
 logic [31:0] instr_EX_1;
 logic [31:0] instr_EX_2;
+logic [31:0] instr_WB_1;
+logic [31:0] instr_WB_2;
 
 // Write back control signals
 logic [1:0] regsel_WB_1;
@@ -45,17 +47,16 @@ logic zero;
 logic [31:0] se_1;
 logic [31:0] mux1_1;
 logic [31:0] mux2_1;
-logic [11:0] PC_mux_1;
-logic [31:0] se_1;
-logic [31:0] mux1_1;
+logic [31:0] se_2;
+logic [31:0] mux1_2;
 logic [31:0] mux2_2;
-logic [11:0] PC_mux_2;
+logic [11:0] PC_mux;
 
 // Update to lab 4
-logic [11:0] PC_EX_1 = 12'd0;
+logic [11:0] PC_EX = 12'd0;
 logic [0:0] stall_EX_1;
 logic [0:0] stall_FETCH_1;
-logic [1:0] pcsrc_EX_1;
+logic [1:0] pcsrc_EX;
 
 //branch
 logic [11:0] branch_addr_EX;
@@ -107,11 +108,11 @@ alu alu1_1 (.A(readdata1_1), .B(mux1_1), .op(aluop_EX_1), .R(R_EX_1), .zero(zero
 alu alu1_2 (.A(readdata1_2), .B(mux1_2), .op(aluop_EX_2), .R(R_EX_2), .zero(zero));
 
 // intialize alu
-	assign pcsrc_EX_1 = (stall_EX_1 == 1'b1) ? 2'b0 : (instr_EX_1[6:0] == 7'b1100011) ? 
+	assign pcsrc_EX = (stall_EX_1 == 1'b1) ? 2'b0 : (instr_EX_1[6:0] == 7'b1100011) ? 
 			    ((instr_EX_1[14:12] == 3'b0) ? (R_EX_1 == 32'b0 ? 2'b1 : 2'b0) : ((instr_EX_1[14:12] == 3'b1) ? (R_EX_1 !== 32'b0 ? 2'b1 : 2'b0) : (instr_EX_1[14:12] == 3'b100) ? (R_EX_1 == 32'b1 ? 2'b1 : 2'b0) : (instr_EX_1[14:12] == 3'b101) ? (R_EX_1 == 32'b0 ? 2'b1 : 2'b0) : (instr_EX_1[14:12] == 3'b110) ? (R_EX_1 == 32'b1 ? 2'b1 : 2'b0) : (instr_EX_1[14:12] == 3'b111) ? (R_EX_1 == 32'b0 ? 2'b1 : 2'b0) : 2'b0))
 			    : ((instr_EX_1[6:0] == 7'b1100111) ? 2'b11 : ((instr_EX_1[6:0] == 7'b1101111) ? 2'b10 : 2'b0));
 	
-	assign stall_FETCH_1 = (pcsrc_EX_1[1:0] == 2'b0) ? 1'b0 : 1'b1;
+	assign stall_FETCH_1 = (pcsrc_EX[1:0] == 2'b0) ? 1'b0 : 1'b1;
 
 	always @(posedge clk) stall_EX_1 <= stall_FETCH_1;
 
@@ -130,7 +131,7 @@ always_ff @(posedge clk) begin
 	
 // Setting our output
 	if(gpio_we_WB_2 == 1'b1) begin
-		instr_out <= readdata1;
+		instr_out <= readdata1_2;
 	end else if (~rst_n) begin 
 	        instr_out <= 32'b0;           
 	end else begin 
@@ -161,7 +162,7 @@ assign holder = PC_FETCH + 2'b10;
 assign PC_mux = (pcsrc_EX == 2'b11) ? (jalr_addr_EX) : ((pcsrc_EX == 2'b1) ? branch_addr_EX : ((pcsrc_EX == 2'b10) ? jal_addr_EX : holder));
 		
 // Intialize regfile
-	regfile regfile1 (.clk(clk), .rst(~rst_n), .we_1(regwrite_WB_1), .we_2(regwrite_WB_2), .readaddr1_1(instr_EX_1[19:15]), .readaddr1_1(instr_EX_2[19:15]), .readaddr2_2(instr_EX_2[24:20]), .readaddr2_2(instr_EX_2[24:20]), .writeaddr_1(instr_WB_1[11:7]), .writeaddr_2(instr_WB_2[11:7]), .writedata_1(mux2_1), .writedata_2(mux2_2), .readdata1_1(readdata1_1), .readdata2_1(readdata2_1), .readdata1_2(readdata1_2), .readdata2_2(readdata2_2));
+	regfile regfile1 (.clk(clk), .rst(~rst_n), .we_1(regwrite_WB_1), .we_2(regwrite_WB_2), .readaddr1_1(instr_EX_1[19:15]), .readaddr2_2(instr_EX_2[24:20]), .writeaddr_1(instr_WB_1[11:7]), .writeaddr_2(instr_WB_2[11:7]), .writedata_1(mux2_1), .writedata_2(mux2_2), .readdata1_1(readdata1_1), .readdata2_1(readdata2_1), .readdata1_2(readdata1_2), .readdata2_2(readdata2_2));
 
 
 endmodule  
