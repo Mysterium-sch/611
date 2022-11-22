@@ -41,19 +41,19 @@ module simtop;
 // your code here
 
 always begin
-	#5 clk =1;
-	#5 clk = 0;
+	#10 clk =1;
+	#10 clk = 0;
 end
 
 
 
 initial begin
 	KEY = 4'b1;
-	SW = 18'b1111; #5
-	KEY = 4'b0; #5
+	SW = 18'b1111; #10
+	KEY = 4'b0; #10
 	
 	KEY = 4'b1111;
-	#300;
+	#450;
 	if (HEX0 == 7'b0010010) $display (HEX0);
 	KEY = 4'b0;
 end

@@ -2,7 +2,7 @@ module cpu(input logic clk, input logic rst_n, input logic [31:0] instr_in, outp
 
 // From given cpu file
 logic [63:0] inst_ram [2047:0];
-logic [11:0] PC_FETCH = 9'd0; 
+logic [11:0] PC_FETCH = 12'd0; 
 logic [63:0] instr_EX;
 logic [31:0] instr_EX_1;
 logic [31:0] instr_EX_2;
@@ -79,7 +79,7 @@ initial
 always_ff @(posedge clk) begin 
 	if (~rst_n) begin 
 		PC_FETCH <= 12'd0;
-		instr_EX <= 32'd0; 
+		instr_EX <= 64'd0; 
 	end else begin
 		// branch cal
 		PC_FETCH <= PC_mux;
@@ -163,11 +163,11 @@ assign jalr_offset_EX = instr_EX_1[31:20];
 assign jalr_addr_EX = readdata1_1 + {{2{jalr_offset_EX[11]}},jalr_offset_EX[11:2]};
 
 logic [11:0] holder;
-assign holder = PC_FETCH + 2'b10;
+assign holder = PC_FETCH + 1'b1;
 assign PC_mux = (pcsrc_EX == 2'b11) ? (jalr_addr_EX) : ((pcsrc_EX == 2'b1) ? branch_addr_EX : ((pcsrc_EX == 2'b10) ? jal_addr_EX : holder));
 		
 // Intialize regfile
-	regfile regfile1 (.clk(clk), .rst(~rst_n), .we_1(regwrite_WB_1), .we_2(regwrite_WB_2), .readaddr1_1(instr_EX_1[19:15]), .readaddr2_2(instr_EX_2[24:20]), .writeaddr_1(instr_WB_1[11:7]), .writeaddr_2(instr_WB_2[11:7]), .writedata_1(mux2_1), .writedata_2(mux2_2), .readdata1_1(readdata1_1), .readdata2_1(readdata2_1), .readdata1_2(readdata1_2), .readdata2_2(readdata2_2));
+	regfile regfile1 (.clk(clk), .rst(~rst_n), .we_1(regwrite_WB_1), .we_2(regwrite_WB_2), .readaddr1_1(instr_EX_1[19:15]), .readaddr2_1(instr_EX_1[24:20]), .readaddr1_2(instr_EX_2[19:15]), .readaddr2_2(instr_EX_2[24:20]), .writeaddr_1(instr_WB_1[11:7]), .writeaddr_2(instr_WB_2[11:7]), .writedata_1(mux2_1), .writedata_2(mux2_2), .readdata1_1(readdata1_1), .readdata2_1(readdata2_1), .readdata1_2(readdata1_2), .readdata2_2(readdata2_2));
 
 
 endmodule  

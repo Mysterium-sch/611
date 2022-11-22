@@ -50,13 +50,14 @@ always_ff @(posedge clk, posedge rst) begin
 		// handle case where we are writing to reg0. we explicitly write 0 to
 		// as a precaution to make sure nothing gets optimized out of the
 		// design.
+		if (we_2 && (writeaddr_2 == 0)) mem[0] <= 0;
+		// handle the default case
+		else if (we_2) mem[writeaddr_2] <= writedata_2;
+
 		if (we_1 && (writeaddr_1 == 0)) mem[0] <= 0;
 		// handle the default case
 		else if (we_1) mem[writeaddr_1] <= writedata_1;
 		
-		if (we_2 && (writeaddr_2 == 0)) mem[0] <= 0;
-		// handle the default case
-		else if (we_2) mem[writeaddr_2] <= writedata_2;
 
 	end
 
@@ -67,19 +68,31 @@ always_comb begin
 	// $monitor("reg 5: %8h", mem[5]);
 	// $monitor("writeaddr: %8h, we: %1h", writeaddr, we);
 
-	// special case to prevent write bypass from kicking in for reg0
+	// Instruction 1
 	if (we_1 && (readaddr1_1 == 0)) readdata1_buf_1 = 0;
 	// write-bypass
 	else if (we_1 && (readaddr1_1 == writeaddr_1)) readdata1_buf_1 = writedata_1;
+	else if (we_1 && (readaddr1_1 == writeaddr_2)) readdata1_buf_1 = writedata_2;
 	// default case
 	else readdata1_buf_1 = mem[readaddr1_1];
-	
+
+	if (we_1 && (readaddr2_1 == 0)) readdata2_buf_1 = 0;
+	else if (we_1 && (readaddr2_1 == writeaddr_1)) readdata2_buf_1 = writedata_1;
+	else if (we_1 && (readaddr2_1 == writeaddr_2)) readdata2_buf_1 = writedata_2;
+	else readdata2_buf_1 = mem[readaddr2_1];
+
 	// Instruction 2
 	if (we_2 && (readaddr1_2 == 0)) readdata1_buf_2 = 0;
 	// write-bypass
 	else if (we_2 && (readaddr1_2 == writeaddr_2)) readdata1_buf_2 = writedata_2;
+	else if (we_2 && (readaddr1_2 == writeaddr_1)) readdata1_buf_2 = writedata_1;
 	// default case
 	else readdata1_buf_2 = mem[readaddr1_2];
+
+	if (we_2 && (readaddr2_2 == 0)) readdata2_buf_2 = 0;
+	else if (we_2 && (readaddr2_2 == writeaddr_2)) readdata2_buf_2 = writedata_2;
+	else if (we_2 && (readaddr2_2 == writeaddr_1)) readdata2_buf_2 = writedata_1;
+	else readdata2_buf_2 = mem[readaddr2_2];
 
 end
 

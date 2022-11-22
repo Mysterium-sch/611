@@ -1,0 +1,16 @@
+vloop: addi x8,x7,24
+li x9,1
+sll x9,x9,x8
+addi x7,x7,1
+and x10,x2,x9
+xori x8,x5,0xffffffff	# note: pseudoinstruction for xori x8,x5,0xffffffff
+bnez x10,skip2
+or x11,x2,x9
+and x11,x11,x8
+sll x16,x7,x6
+or x11,x16,x11
+add x15,x14,x1
+sw x11,(x15)
+addi x1,x1,4
+skip2: blt x7,x12,vloop
+nop
