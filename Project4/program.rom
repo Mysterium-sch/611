@@ -1,0 +1,74 @@
+f0001af3 // read input to x21
+015001b3 // set x3 to x21
+00a00493 // set x9 to 10
+3e800093 // set x1 to 1000
+029080b3 // set x1 to 10,000
+199992b7 // here to 
+4cd00f93
+4cdf8f93
+01f2e2b3 // here sets x5 to 0.1
+40000113 // sets x2 to 1024
+00411113 // sets x2 to 16,384
+022181b3 // multiplys x3 by x2
+00000213 // sets x4 to 0
+00100313 // sets x6 to 1
+00831313 // sets x6 to 256
+06030863 // THIS IS THE BRANCH (branches when x6 is zero), goes to 44
+024203b3 // sets x7 to x4 * x4
+02423833 // sets x16 to x4 * x4 high
+00e3d793 // sets x 15 to high bits of x7
+01281713 // sets x14 to low bits of x16
+00e7e3b3 // sets x7 to or x15 and x14
+00120593 // sets x11 to x4 plus 1
+02b585b3 // sets x11 to x11*x11
+022585b3 // sets x11 to x11*x2
+04358463 // ANOTHER BRACNH (branches when x11=x3), goes to 43
+04338463 // ANOTHER BRANCH (branches when x7=x3), goes to 44
+0033ca63 // ANOTHER BRANCH (branches when x3>x7), goes to 32
+40338633 // set x12 to x7 - x3
+00165613 // shifts right x12 by 1
+02360c63 // ANOTHER BRACNCH (branches if x12 and x13 match), goes to 
+010000ef // JUMPS to 35
+40718633 // sets x12 to x3-x7
+00165613 // shifts right x12 by 1
+02360463 // ANOTHER BRANCH (branches if x12 and x13 are equal), goes to 
+0071c463 // ANOTHER BRANCH (branches if x7>x3), goes to 37
+0033c863 // ANOTHER BRANCH (branches if x7<x3), goes to 40
+40620233 // sets x4 to x4-x6
+00135313 // shifts right x6 by 1
+fa5ff0ef // JUMPS to 16
+00620233 // sets x4 to x4+x6
+00135313 // shifts right x6 by 1
+f99ff0ef // JUMPS to 16
+00120213 // adds 1 to x4
+03523233 // sets x4 to x4 * x21
+02520f33
+02523233
+029f3433
+02520f33
+02523233
+029f33b3
+00439393
+0083ea33
+02520f33
+02523233
+029f3333
+00831313
+02520f33
+02523233
+029f37b3
+00c79793
+0067e5b3
+0145ea33
+02520f33
+02523233
+029f3633
+01061613
+02520f33
+02523233
+029f36b3
+01469693
+00c6e6b3
+0146ea33
+f02a9a73
+f00a1b73

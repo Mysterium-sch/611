@@ -50,13 +50,14 @@ always_ff @(posedge clk, posedge rst) begin
 		// handle case where we are writing to reg0. we explicitly write 0 to
 		// as a precaution to make sure nothing gets optimized out of the
 		// design.
-		if (we_2 && (writeaddr_2 == 0)) mem[0] <= 0;
-		// handle the default case
-		else if (we_2) mem[writeaddr_2] <= writedata_2;
 
 		if (we_1 && (writeaddr_1 == 0)) mem[0] <= 0;
 		// handle the default case
 		else if (we_1) mem[writeaddr_1] <= writedata_1;
+
+		if (we_2 && (writeaddr_2 == 0)) mem[0] <= 0;
+		// handle the default case
+		else if (we_2) mem[writeaddr_2] <= writedata_2;
 		
 
 	end

@@ -95,7 +95,7 @@ module top (
 	end
 
 	logic [31:0] instr_out;
-	cpu cpu1 (.clk(CLOCK_50), .rst_n(KEY[0]), .instr_in({15'b0, SW}), .instr_out(instr_out)); 
+	cpu cpu1 (.clk(CLOCK_50), .rst_n(KEY[0]), .instr_in({14'b0, SW}), .instr_out(instr_out)); 
 
 
 	// Intialize all 7-segemnt decoders
