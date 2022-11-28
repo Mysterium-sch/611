@@ -1,0 +1,831 @@
+Analysis & Synthesis report for DE2_115
+Mon Nov 28 16:28:40 2022
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for Inferred Entity Instance: cpu:cpu1|alu:alu1_2|lpm_mult:Mult1
+ 15. Parameter Settings for Inferred Entity Instance: cpu:cpu1|alu:alu1_2|lpm_mult:Mult0
+ 16. Parameter Settings for Inferred Entity Instance: cpu:cpu1|alu:alu1_1|lpm_mult:Mult1
+ 17. Parameter Settings for Inferred Entity Instance: cpu:cpu1|alu:alu1_1|lpm_mult:Mult0
+ 18. lpm_mult Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "cpu:cpu1|alu:alu1_2"
+ 20. Port Connectivity Checks: "cpu:cpu1|alu:alu1_1"
+ 21. Port Connectivity Checks: "cpu:cpu1|control:control2"
+ 22. Port Connectivity Checks: "cpu:cpu1|control:control1|deco:decode1"
+ 23. Port Connectivity Checks: "cpu:cpu1|control:control1"
+ 24. Port Connectivity Checks: "cpu:cpu1"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Nov 28 16:28:40 2022           ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                      ; DE2_115                                         ;
+; Top-level Entity Name              ; top                                             ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 6,210                                           ;
+;     Total combinational functions  ; 6,169                                           ;
+;     Dedicated logic registers      ; 1,276                                           ;
+; Total registers                    ; 1276                                            ;
+; Total pins                         ; 108                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 32                                              ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; top                ; DE2_115            ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; top.sv                           ; yes             ; User SystemVerilog HDL File        ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv                ;         ;
+; hexdriver.sv                     ; yes             ; User SystemVerilog HDL File        ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv          ;         ;
+; cpu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv                ;         ;
+; program.rom                      ; yes             ; Auto-Found Unspecified File        ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/program.rom           ;         ;
+; control.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv            ;         ;
+; deco.sv                          ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv               ;         ;
+; alu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv                ;         ;
+; regfile.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv            ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/aglobal181.inc  ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/multcore.inc    ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/bypassff.inc    ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/altshift.inc    ;         ;
+; db/mult_46t.tdf                  ; yes             ; Auto-Generated Megafunction        ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/db/mult_46t.tdf       ;         ;
+; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction        ; /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/db/mult_7dt.tdf       ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 6,210          ;
+;                                             ;                ;
+; Total combinational functions               ; 6169           ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 4439           ;
+;     -- 3 input functions                    ; 1502           ;
+;     -- <=2 input functions                  ; 228            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 5554           ;
+;     -- arithmetic mode                      ; 615            ;
+;                                             ;                ;
+; Total registers                             ; 1276           ;
+;     -- Dedicated logic registers            ; 1276           ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 108            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 32             ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 1249           ;
+; Total fan-out                               ; 27175          ;
+; Average fan-out                             ; 3.53           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                             ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-------------+--------------+
+; |top                                  ; 6169 (59)           ; 1276 (51)                 ; 0           ; 32           ; 0       ; 16        ; 108  ; 0            ; |top                                                            ; top         ; work         ;
+;    |cpu:cpu1|                         ; 6054 (1441)         ; 1225 (201)                ; 0           ; 32           ; 0       ; 16        ; 0    ; 0            ; |top|cpu:cpu1                                                   ; cpu         ; work         ;
+;       |alu:alu1_1|                    ; 1017 (846)          ; 0 (0)                     ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_1                                        ; alu         ; work         ;
+;          |lpm_mult:Mult0|             ; 79 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_1|lpm_mult:Mult0                         ; lpm_mult    ; work         ;
+;             |mult_7dt:auto_generated| ; 79 (79)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_1|lpm_mult:Mult0|mult_7dt:auto_generated ; mult_7dt    ; work         ;
+;          |lpm_mult:Mult1|             ; 92 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_1|lpm_mult:Mult1                         ; lpm_mult    ; work         ;
+;             |mult_46t:auto_generated| ; 92 (92)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_1|lpm_mult:Mult1|mult_46t:auto_generated ; mult_46t    ; work         ;
+;       |alu:alu1_2|                    ; 908 (737)           ; 0 (0)                     ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_2                                        ; alu         ; work         ;
+;          |lpm_mult:Mult0|             ; 79 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_2|lpm_mult:Mult0                         ; lpm_mult    ; work         ;
+;             |mult_7dt:auto_generated| ; 79 (79)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_2|lpm_mult:Mult0|mult_7dt:auto_generated ; mult_7dt    ; work         ;
+;          |lpm_mult:Mult1|             ; 92 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_2|lpm_mult:Mult1                         ; lpm_mult    ; work         ;
+;             |mult_46t:auto_generated| ; 92 (92)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu1|alu:alu1_2|lpm_mult:Mult1|mult_46t:auto_generated ; mult_46t    ; work         ;
+;       |control:control1|              ; 41 (37)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu1|control:control1                                  ; control     ; work         ;
+;          |deco:decode1|               ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu1|control:control1|deco:decode1                     ; deco        ; work         ;
+;       |control:control2|              ; 20 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu1|control:control2                                  ; control     ; work         ;
+;          |deco:decode1|               ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu1|control:control2|deco:decode1                     ; deco        ; work         ;
+;       |regfile:regfile1|              ; 2627 (2627)         ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu1|regfile:regfile1                                  ; regfile     ; work         ;
+;    |hexdriver:hex1|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|hexdriver:hex1                                             ; hexdriver   ; work         ;
+;    |hexdriver:hex2|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|hexdriver:hex2                                             ; hexdriver   ; work         ;
+;    |hexdriver:hex3|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|hexdriver:hex3                                             ; hexdriver   ; work         ;
+;    |hexdriver:hex4|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|hexdriver:hex4                                             ; hexdriver   ; work         ;
+;    |hexdriver:hex5|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|hexdriver:hex5                                             ; hexdriver   ; work         ;
+;    |hexdriver:hex6|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|hexdriver:hex6                                             ; hexdriver   ; work         ;
+;    |hexdriver:hex7|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|hexdriver:hex7                                             ; hexdriver   ; work         ;
+;    |hexdriver:hex8|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|hexdriver:hex8                                             ; hexdriver   ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 16          ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 32          ;
+; Signed Embedded Multipliers           ; 2           ;
+; Unsigned Embedded Multipliers         ; 10          ;
+; Mixed Sign Embedded Multipliers       ; 4           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++-------------------------------------------+----------------------------------------+
+; Register name                             ; Reason for Removal                     ;
++-------------------------------------------+----------------------------------------+
+; cpu:cpu1|luiHelper_2[0..11]               ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu1|luiHelper_1[0..11]               ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu1|regwrite_WB_1[0]                 ; Merged with cpu:cpu1|regwrite_WB_2[0]  ;
+; cpu:cpu1|instr_EX[2,3,14,24,35]           ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu1|luiHelper_2[14,24]               ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu1|regsel_WB_2[0]                   ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu1|luiHelper_2[12,13,15..23,25..31] ; Lost fanout                            ;
+; cpu:cpu1|instr_EX[19]                     ; Merged with cpu:cpu1|instr_EX[17]      ;
+; cpu:cpu1|instr_EX[25]                     ; Merged with cpu:cpu1|instr_EX[16]      ;
+; cpu:cpu1|luiHelper_1[31]                  ; Merged with cpu:cpu1|luiHelper_1[29]   ;
+; cpu:cpu1|instr_EX[1,4,32,33]              ; Merged with cpu:cpu1|instr_EX[0]       ;
+; cpu:cpu1|instr_EX[27,34]                  ; Merged with cpu:cpu1|instr_EX[26]      ;
+; cpu:cpu1|instr_EX[61,63]                  ; Merged with cpu:cpu1|instr_EX[38]      ;
+; cpu:cpu1|instr_EX[6,29,31]                ; Merged with cpu:cpu1|instr_EX[28]      ;
+; Total Number of Removed Registers = 65    ;                                        ;
++-------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                       ;
++-----------------------+---------------------------+-------------------------------------------------------------------------------+
+; Register name         ; Reason for Removal        ; Registers Removed due to This Register                                        ;
++-----------------------+---------------------------+-------------------------------------------------------------------------------+
+; cpu:cpu1|instr_EX[2]  ; Stuck at GND              ; cpu:cpu1|regsel_WB_2[0], cpu:cpu1|luiHelper_2[12], cpu:cpu1|luiHelper_2[13],  ;
+;                       ; due to stuck port data_in ; cpu:cpu1|luiHelper_2[16], cpu:cpu1|luiHelper_2[17], cpu:cpu1|luiHelper_2[18], ;
+;                       ;                           ; cpu:cpu1|luiHelper_2[19], cpu:cpu1|luiHelper_2[20], cpu:cpu1|luiHelper_2[21], ;
+;                       ;                           ; cpu:cpu1|luiHelper_2[22], cpu:cpu1|luiHelper_2[25], cpu:cpu1|luiHelper_2[26], ;
+;                       ;                           ; cpu:cpu1|luiHelper_2[27], cpu:cpu1|luiHelper_2[28], cpu:cpu1|luiHelper_2[29]  ;
+; cpu:cpu1|instr_EX[14] ; Stuck at GND              ; cpu:cpu1|luiHelper_2[14]                                                      ;
+;                       ; due to stuck port data_in ;                                                                               ;
+; cpu:cpu1|instr_EX[24] ; Stuck at GND              ; cpu:cpu1|luiHelper_2[24]                                                      ;
+;                       ; due to stuck port data_in ;                                                                               ;
++-----------------------+---------------------------+-------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1276  ;
+; Number of registers using Synchronous Clear  ; 53    ;
+; Number of registers using Synchronous Load   ; 23    ;
+; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1068  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; leds[0]                                ; 3       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[31][14]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[30][14]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[29][6]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[28][4]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[27][18]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[26][9]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[25][27]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[24][20]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[23][9]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[22][20]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[21][4]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[20][7]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[19][12]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[18][10]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[17][24]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[16][21]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[15][18]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[14][6]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[13][23]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[12][28]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[11][18]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[10][22]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[9][10]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[8][14]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[7][26]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[6][9]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[5][2]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[4][9]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[3][25]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[2][29]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[1][29]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|instr_out[25]                    ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |top|cpu:cpu1|regfile:regfile1|mem[0][28]      ;
+; 73:1               ; 7 bits    ; 336 LEs       ; 70 LEs               ; 266 LEs                ; Yes        ; |top|cpu:cpu1|R_WB_2[22]                       ;
+; 72:1               ; 8 bits    ; 384 LEs       ; 72 LEs               ; 312 LEs                ; Yes        ; |top|cpu:cpu1|R_WB_2[11]                       ;
+; 73:1               ; 4 bits    ; 192 LEs       ; 40 LEs               ; 152 LEs                ; Yes        ; |top|cpu:cpu1|R_WB_2[4]                        ;
+; 74:1               ; 4 bits    ; 196 LEs       ; 40 LEs               ; 156 LEs                ; Yes        ; |top|cpu:cpu1|R_WB_2[26]                       ;
+; 74:1               ; 2 bits    ; 98 LEs        ; 20 LEs               ; 78 LEs                 ; Yes        ; |top|cpu:cpu1|R_WB_2[2]                        ;
+; 75:1               ; 2 bits    ; 100 LEs       ; 22 LEs               ; 78 LEs                 ; Yes        ; |top|cpu:cpu1|R_WB_2[28]                       ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu1|mux2_1[25]                       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu1|mux2_1[3]                        ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu1|mux2_1[17]                       ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu1|mux2_2[30]                       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu1|mux2_2[5]                        ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu1|mux2_2[17]                       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu1|Add0                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu1|Add0                             ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu1|Add0                             ;
+; 35:1               ; 32 bits   ; 736 LEs       ; 736 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu1|regfile:regfile1|readdata1_2[1]  ;
+; 35:1               ; 32 bits   ; 736 LEs       ; 736 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu1|regfile:regfile1|readdata1_1[31] ;
+; 20:1               ; 31 bits   ; 403 LEs       ; 372 LEs              ; 31 LEs                 ; No         ; |top|cpu:cpu1|mux1_2[18]                       ;
+; 36:1               ; 32 bits   ; 768 LEs       ; 768 LEs              ; 0 LEs                  ; No         ; |top|cpu:cpu1|mux1_1[11]                       ;
+; 73:1               ; 7 bits    ; 336 LEs       ; 70 LEs               ; 266 LEs                ; No         ; |top|cpu:cpu1|alu:alu1_1|R[17]                 ;
+; 72:1               ; 8 bits    ; 384 LEs       ; 72 LEs               ; 312 LEs                ; No         ; |top|cpu:cpu1|alu:alu1_1|R[12]                 ;
+; 73:1               ; 4 bits    ; 192 LEs       ; 36 LEs               ; 156 LEs                ; No         ; |top|cpu:cpu1|alu:alu1_1|R[4]                  ;
+; 74:1               ; 4 bits    ; 196 LEs       ; 40 LEs               ; 156 LEs                ; No         ; |top|cpu:cpu1|alu:alu1_1|R[26]                 ;
+; 74:1               ; 2 bits    ; 98 LEs        ; 20 LEs               ; 78 LEs                 ; No         ; |top|cpu:cpu1|alu:alu1_1|R[2]                  ;
+; 75:1               ; 2 bits    ; 100 LEs       ; 22 LEs               ; 78 LEs                 ; No         ; |top|cpu:cpu1|alu:alu1_1|R[28]                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:cpu1|alu:alu1_2|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32           ; Untyped             ;
+; LPM_WIDTHB                                     ; 32           ; Untyped             ;
+; LPM_WIDTHP                                     ; 64           ; Untyped             ;
+; LPM_WIDTHR                                     ; 64           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_46t     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:cpu1|alu:alu1_2|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32           ; Untyped             ;
+; LPM_WIDTHB                                     ; 32           ; Untyped             ;
+; LPM_WIDTHP                                     ; 64           ; Untyped             ;
+; LPM_WIDTHR                                     ; 64           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:cpu1|alu:alu1_1|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32           ; Untyped             ;
+; LPM_WIDTHB                                     ; 32           ; Untyped             ;
+; LPM_WIDTHP                                     ; 64           ; Untyped             ;
+; LPM_WIDTHR                                     ; 64           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_46t     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:cpu1|alu:alu1_1|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32           ; Untyped             ;
+; LPM_WIDTHB                                     ; 32           ; Untyped             ;
+; LPM_WIDTHP                                     ; 64           ; Untyped             ;
+; LPM_WIDTHR                                     ; 64           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                             ;
++---------------------------------------+------------------------------------+
+; Name                                  ; Value                              ;
++---------------------------------------+------------------------------------+
+; Number of entity instances            ; 4                                  ;
+; Entity Instance                       ; cpu:cpu1|alu:alu1_2|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 32                                 ;
+;     -- LPM_WIDTHB                     ; 32                                 ;
+;     -- LPM_WIDTHP                     ; 64                                 ;
+;     -- LPM_REPRESENTATION             ; SIGNED                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                 ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                 ;
+;     -- USE_EAB                        ; OFF                                ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                               ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                 ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                 ;
+; Entity Instance                       ; cpu:cpu1|alu:alu1_2|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                 ;
+;     -- LPM_WIDTHB                     ; 32                                 ;
+;     -- LPM_WIDTHP                     ; 64                                 ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                           ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                 ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                 ;
+;     -- USE_EAB                        ; OFF                                ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                               ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                 ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                 ;
+; Entity Instance                       ; cpu:cpu1|alu:alu1_1|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 32                                 ;
+;     -- LPM_WIDTHB                     ; 32                                 ;
+;     -- LPM_WIDTHP                     ; 64                                 ;
+;     -- LPM_REPRESENTATION             ; SIGNED                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                 ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                 ;
+;     -- USE_EAB                        ; OFF                                ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                               ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                 ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                 ;
+; Entity Instance                       ; cpu:cpu1|alu:alu1_1|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                 ;
+;     -- LPM_WIDTHB                     ; 32                                 ;
+;     -- LPM_WIDTHP                     ; 64                                 ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                           ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                 ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                 ;
+;     -- USE_EAB                        ; OFF                                ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                               ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                 ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                 ;
++---------------------------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu1|alu:alu1_2"                                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu1|alu:alu1_1"                                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu1|control:control2"                                                              ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; regwrite ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu1|control:control1|deco:decode1"                                              ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; op    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rs1   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rs2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; imm20 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu1|control:control1"                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; gpio_we ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu1"                                                                                                                                                                                     ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port             ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; instr_in         ; Input ; Warning  ; Input port expression (33 bits) is wider than the input port (32 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; instr_in[31..18] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 108                         ;
+; cycloneiii_ff         ; 1276                        ;
+;     ENA               ; 1018                        ;
+;     ENA CLR           ; 32                          ;
+;     ENA SLD           ; 18                          ;
+;     SCLR              ; 53                          ;
+;     SLD               ; 5                           ;
+;     plain             ; 150                         ;
+; cycloneiii_lcell_comb ; 6179                        ;
+;     arith             ; 615                         ;
+;         2 data inputs ; 97                          ;
+;         3 data inputs ; 518                         ;
+;     normal            ; 5564                        ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 123                         ;
+;         3 data inputs ; 984                         ;
+;         4 data inputs ; 4439                        ;
+; cycloneiii_mac_mult   ; 16                          ;
+; cycloneiii_mac_out    ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 26.70                       ;
+; Average LUT depth     ; 15.53                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:16     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Mon Nov 28 16:28:11 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115 -c DE2_115
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file top.sv
+    Info (12023): Found entity 1: top File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file hexdriver.sv
+    Info (12023): Found entity 1: hexdriver File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv Line: 1
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at top.sv(60): truncated value with size 26 to match size of target (24) File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 60
+Warning (10230): Verilog HDL assignment warning at top.sv(72): truncated value with size 32 to match size of target (24) File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 72
+Warning (12125): Using design file cpu.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: cpu File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 1
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 98
+Warning (10850): Verilog HDL warning at cpu.sv(76): number of words (25) in memory file does not match the number of elements in the address range [0:2047] File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 76
+Warning (10230): Verilog HDL assignment warning at cpu.sv(163): truncated value with size 32 to match size of target (12) File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 163
+Warning (10030): Net "inst_ram.data_a" at cpu.sv(4) has no driver or initial value, using a default initial value '0' File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 4
+Warning (10030): Net "inst_ram.waddr_a" at cpu.sv(4) has no driver or initial value, using a default initial value '0' File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 4
+Warning (10030): Net "inst_ram.we_a" at cpu.sv(4) has no driver or initial value, using a default initial value '0' File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 4
+Warning (12125): Using design file control.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: control File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv Line: 1
+Info (12128): Elaborating entity "control" for hierarchy "cpu:cpu1|control:control1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 97
+Warning (12125): Using design file deco.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: deco File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv Line: 1
+Info (12128): Elaborating entity "deco" for hierarchy "cpu:cpu1|control:control1|deco:decode1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv Line: 20
+Warning (12125): Using design file alu.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: alu File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 7
+Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu1|alu:alu1_1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 109
+Warning (10036): Verilog HDL or VHDL warning at alu.sv(15): object "mullu" assigned a value but never read File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 15
+Warning (12125): Using design file regfile.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: regfile File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 3
+Info (12128): Elaborating entity "regfile" for hierarchy "cpu:cpu1|regfile:regfile1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv Line: 170
+Warning (10027): Verilog HDL or VHDL warning at the regfile.sv(78): index expression is not wide enough to address all of the elements in the array File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 78
+Warning (10230): Verilog HDL assignment warning at regfile.sv(78): truncated value with size 64 to match size of target (32) File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 78
+Warning (10027): Verilog HDL or VHDL warning at the regfile.sv(83): index expression is not wide enough to address all of the elements in the array File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 83
+Warning (10230): Verilog HDL assignment warning at regfile.sv(83): truncated value with size 64 to match size of target (32) File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 83
+Warning (10027): Verilog HDL or VHDL warning at the regfile.sv(91): index expression is not wide enough to address all of the elements in the array File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 91
+Warning (10230): Verilog HDL assignment warning at regfile.sv(91): truncated value with size 64 to match size of target (32) File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 91
+Warning (10027): Verilog HDL or VHDL warning at the regfile.sv(96): index expression is not wide enough to address all of the elements in the array File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 96
+Warning (10230): Verilog HDL assignment warning at regfile.sv(96): truncated value with size 64 to match size of target (32) File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv Line: 96
+Info (12128): Elaborating entity "hexdriver" for hierarchy "hexdriver:hex1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 103
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/db/DE2_115.ram0_cpu_1987c.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:cpu1|alu:alu1_2|Mult1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 22
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:cpu1|alu:alu1_2|Mult0" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 21
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:cpu1|alu:alu1_1|Mult1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 22
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:cpu1|alu:alu1_1|Mult0" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 21
+Info (12130): Elaborated megafunction instantiation "cpu:cpu1|alu:alu1_2|lpm_mult:Mult1" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 22
+Info (12133): Instantiated megafunction "cpu:cpu1|alu:alu1_2|lpm_mult:Mult1" with the following parameter: File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 22
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_46t.tdf
+    Info (12023): Found entity 1: mult_46t File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/db/mult_46t.tdf Line: 30
+Info (12130): Elaborated megafunction instantiation "cpu:cpu1|alu:alu1_2|lpm_mult:Mult0" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 21
+Info (12133): Instantiated megafunction "cpu:cpu1|alu:alu1_2|lpm_mult:Mult0" with the following parameter: File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv Line: 21
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
+    Info (12023): Found entity 1: mult_7dt File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/db/mult_7dt.tdf Line: 30
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13014): Ignored 912 buffer(s)
+    Info (13019): Ignored 912 SOFT buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 18 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/DE2_115.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 10
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 11
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 18
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 18
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv Line: 18
+Info (21057): Implemented 6401 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 25 input pins
+    Info (21059): Implemented 83 output pins
+    Info (21061): Implemented 6261 logic cells
+    Info (21062): Implemented 32 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 1070 megabytes
+    Info: Processing ended: Mon Nov 28 16:28:40 2022
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:45
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/DE2_115.map.smsg.
+
+

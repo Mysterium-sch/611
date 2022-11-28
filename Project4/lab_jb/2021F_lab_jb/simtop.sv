@@ -49,11 +49,11 @@ end
 
 initial begin
 	KEY = 4'b1;
-	SW = 18'b100; #5
+	SW = 18'b10001; #5
 	KEY = 4'b0; #5
 	
 	KEY = 4'b1111;
-	#3000;
+	#6000;
 	if (HEX0 == 7'b0010010) $display (HEX0);
 	KEY = 4'b0;
 end

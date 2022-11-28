@@ -10,18 +10,17 @@ z2
 cModel Technology
 Z0 d/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb
 T_opt
-!s110 1669146313
-VW0DBm8HMShhdTiV[Tlna32
+!s110 1669672672
+V7KO2VOT2F>3=_5lTf9[9_3
 04 6 4 work simtop fast 0
-=17-000ae431a4f1-637d26c9-b8480-9e9b
+=15-000ae431a4f1-63852ee0-4a6c8-22be
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
 n@_opt
 OL;O;2020.1;71
-R0
 valu
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1669148549
+Z3 !s110 1669672667
 !i10b 1
 !s100 Fz;21dl2PMZ6MFeGeLCUd1
 Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -32,13 +31,13 @@ R0
 Z6 w1646062652
 8/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/alu.sv
 F/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/alu.sv
-!i122 488
+!i122 64
 L0 7 48
 Z7 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1669148549.000000
+Z8 !s108 1669672667.000000
 !s107 /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/alu.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/alu.sv|
 !i113 0
@@ -57,7 +56,7 @@ R0
 w1669145365
 8/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/control.sv
 F/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/control.sv
-!i122 489
+!i122 65
 L0 1 318
 R7
 r1
@@ -82,7 +81,7 @@ R0
 w1668964049
 8/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv
 F/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv
-!i122 490
+!i122 68
 L0 1 145
 R7
 r1
@@ -107,7 +106,7 @@ R0
 w1668632748
 8/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/deco.sv
 F/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/deco.sv
-!i122 492
+!i122 66
 L0 1 44
 R7
 r1
@@ -132,7 +131,7 @@ R0
 w1668632889
 8/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/hexdriver.sv
 F/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/hexdriver.sv
-!i122 491
+!i122 67
 L0 1 33
 R7
 r1
@@ -157,7 +156,7 @@ R0
 R6
 8/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv
 F/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv
-!i122 495
+!i122 69
 L0 3 74
 R7
 r1
@@ -173,16 +172,16 @@ vsimtop
 R2
 R3
 !i10b 1
-!s100 03hY_olJMF56TRLgFbIM43
+!s100 mA1Q[G@[2U`NVZ4ONzS=W0
 R4
-IHN0bS>>0JE6ISgbVkNJ1<2
+IoicQ@X]O>?CkiBOkX5``^1
 R5
 S1
 R0
-w1669146228
+w1669672662
 8/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/simtop.sv
 F/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/simtop.sv
-!i122 494
+!i122 70
 L0 6 56
 R7
 r1
@@ -196,7 +195,7 @@ R9
 R1
 vtop
 R2
-R3
+!s110 1669672668
 !i10b 1
 !s100 lAzEYSiK75^7PE976IlMU2
 R4
@@ -207,7 +206,7 @@ R0
 w1669141915
 8/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/top.sv
 F/acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/top.sv
-!i122 493
+!i122 71
 L0 6 106
 R7
 r1
