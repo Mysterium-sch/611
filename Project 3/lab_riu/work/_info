@@ -28,9 +28,20 @@ R2
 R3
 n@_opt1
 R4
+R0
+T_opt2
+!s110 1669814476
+V^h>iA52nJ?mQcEEfalok^0
+R1
+=1-000ae431a4f1-638758cc-5cfa2-1ea921
+o-quiet -auto_acc_if_foreign -work work
+R3
+n@_opt2
+R4
+R0
 valu
 Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z6 !s110 1668634669
+Z6 !s110 1669814540
 !i10b 1
 !s100 Fz;21dl2PMZ6MFeGeLCUd1
 Z7 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -41,13 +52,13 @@ Z9 d/acct/lrlamb/Desktop/611/Project 3/lab_riu
 w1667057805
 8/acct/lrlamb/Desktop/611/Project 3/lab_riu/alu.sv
 F/acct/lrlamb/Desktop/611/Project 3/lab_riu/alu.sv
-!i122 3
+!i122 14
 L0 7 48
 Z10 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z11 !s108 1668634669.000000
+Z11 !s108 1669814540.000000
 !s107 /acct/lrlamb/Desktop/611/Project 3/lab_riu/alu.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Project 3/lab_riu/alu.sv|
 !i113 0
@@ -55,7 +66,7 @@ Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R3
 vcontrol
 R5
-R6
+!s110 1669814539
 !i10b 1
 !s100 hSH=HogFah_4zojEaP:Z]1
 R7
@@ -66,13 +77,13 @@ R9
 w1667086245
 8/acct/lrlamb/Desktop/611/Project 3/lab_riu/control.sv
 F/acct/lrlamb/Desktop/611/Project 3/lab_riu/control.sv
-!i122 4
+!i122 12
 L0 1 253
 R10
 r1
 !s85 0
 31
-R11
+Z13 !s108 1669814539.000000
 !s107 /acct/lrlamb/Desktop/611/Project 3/lab_riu/control.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Project 3/lab_riu/control.sv|
 !i113 0
@@ -91,13 +102,13 @@ R9
 w1667088317
 8/acct/lrlamb/Desktop/611/Project 3/lab_riu/cpu.sv
 F/acct/lrlamb/Desktop/611/Project 3/lab_riu/cpu.sv
-!i122 5
+!i122 13
 L0 1 92
 R10
 r1
 !s85 0
 31
-R11
+R13
 !s107 /acct/lrlamb/Desktop/611/Project 3/lab_riu/cpu.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Project 3/lab_riu/cpu.sv|
 !i113 0
@@ -105,7 +116,7 @@ R12
 R3
 vdeco
 R5
-Z13 !s110 1668634670
+R6
 !i10b 1
 !s100 K2d7?<je=T2V[SkbbA`BD2
 R7
@@ -116,13 +127,13 @@ R9
 w1666375611
 8/acct/lrlamb/Desktop/611/Project 3/lab_riu/deco.sv
 F/acct/lrlamb/Desktop/611/Project 3/lab_riu/deco.sv
-!i122 9
+!i122 18
 L0 1 35
 R10
 r1
 !s85 0
 31
-Z14 !s108 1668634670.000000
+R11
 !s107 /acct/lrlamb/Desktop/611/Project 3/lab_riu/deco.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Project 3/lab_riu/deco.sv|
 !i113 0
@@ -130,7 +141,7 @@ R12
 R3
 vhexdriver
 R5
-R13
+R6
 !i10b 1
 !s100 kYW5G5_Q[@2?@Bn>cWo823
 R7
@@ -141,13 +152,13 @@ R9
 w1665001461
 8/acct/lrlamb/Desktop/611/Project 3/lab_riu/hexdriver.sv
 F/acct/lrlamb/Desktop/611/Project 3/lab_riu/hexdriver.sv
-!i122 10
+!i122 17
 L0 1 33
 R10
 r1
 !s85 0
 31
-R14
+R11
 !s107 /acct/lrlamb/Desktop/611/Project 3/lab_riu/hexdriver.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Project 3/lab_riu/hexdriver.sv|
 !i113 0
@@ -166,7 +177,7 @@ R9
 w1666896011
 8/acct/lrlamb/Desktop/611/Project 3/lab_riu/regfile.sv
 F/acct/lrlamb/Desktop/611/Project 3/lab_riu/regfile.sv
-!i122 8
+!i122 16
 L0 3 74
 R10
 r1
@@ -180,7 +191,7 @@ R12
 R3
 vsimtop
 R5
-!s110 1668635450
+R6
 !i10b 1
 !s100 2JJgQ6i?1CJ]S8hN7`Xz?2
 R7
@@ -191,13 +202,13 @@ R9
 w1668635441
 8/acct/lrlamb/Desktop/611/Project 3/lab_riu/simtop.sv
 F/acct/lrlamb/Desktop/611/Project 3/lab_riu/simtop.sv
-!i122 11
+!i122 19
 L0 6 56
 R10
 r1
 !s85 0
 31
-!s108 1668635450.000000
+R11
 !s107 /acct/lrlamb/Desktop/611/Project 3/lab_riu/simtop.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Project 3/lab_riu/simtop.sv|
 !i113 0
@@ -216,7 +227,7 @@ R9
 w1667152626
 8/acct/lrlamb/Desktop/611/Project 3/lab_riu/top.sv
 F/acct/lrlamb/Desktop/611/Project 3/lab_riu/top.sv
-!i122 6
+!i122 15
 L0 6 106
 R10
 r1

@@ -12,101 +12,9 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Load canceled
-vlib work
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/alu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/alu.sv 
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/control.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/control.sv 
-# -- Compiling module control
-# 
-# Top level modules:
-# 	control
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv 
-# -- Compiling module cpu
-# 
-# Top level modules:
-# 	cpu
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/deco.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/deco.sv 
-# -- Compiling module deco
-# 
-# Top level modules:
-# 	deco
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/top.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/top.sv 
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/simtop.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/simtop.sv 
-# -- Compiling module simtop
-# 
-# Top level modules:
-# 	simtop
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv 
-# -- Compiling module regfile
-# 
-# Top level modules:
-# 	regfile
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv 
-# -- Compiling module regfile
-# 
-# Top level modules:
-# 	regfile
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/hexdriver.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:27:13 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/hexdriver.sv 
-# -- Compiling module hexdriver
-# 
-# Top level modules:
-# 	hexdriver
-# End time: 15:27:13 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
 vsim -voptargs=+acc work.simtop
 # vsim -voptargs="+acc" work.simtop 
-# Start time: 15:27:21 on Nov 28,2022
+# Start time: 12:24:15 on Nov 30,2022
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading sv_std.std
 # Loading work.simtop(fast)
@@ -117,119 +25,127 @@ vsim -voptargs=+acc work.simtop
 # Loading work.alu(fast)
 # Loading work.regfile(fast)
 # Loading work.hexdriver(fast)
-add wave -position end  sim:/simtop/dut/cpu1/clk
-add wave -position end  sim:/simtop/dut/cpu1/rst_n
-view -new wave
-# .main_pane.wave1.interior.cs.body.pw.wf
-add wave -position insertpoint  \
-sim:/simtop/dut/cpu1/regfile1/clk
-add wave -position end  sim:/simtop/dut/cpu1/regfile1/mem
-add wave -position end  sim:/simtop/dut/cpu1/instr_EX
-add wave -position end  sim:/simtop/dut/cpu1/pcsrc_EX
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/alu.sv
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/alu.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:35 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/alu.sv 
+# Start time: 12:24:31 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/alu.sv 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 15:28:35 on Nov 28,2022, Elapsed time: 0:00:00
+# End time: 12:24:32 on Nov 30,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/control.sv
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/cpu.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:35 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/control.sv 
-# -- Compiling module control
-# 
-# Top level modules:
-# 	control
-# End time: 15:28:35 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:35 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv 
+# Start time: 12:24:32 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/cpu.sv 
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# End time: 15:28:35 on Nov 28,2022, Elapsed time: 0:00:00
+# End time: 12:24:32 on Nov 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/deco.sv
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/control.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:35 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/deco.sv 
+# Start time: 12:24:32 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 12:24:32 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/alu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:24:35 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/cpu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:24:36 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/cpu.sv 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/control.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:24:36 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/control.sv 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/cpu.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:24:36 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/cpu.sv 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/deco.sv
+# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:24:36 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/deco.sv 
 # -- Compiling module deco
 # 
 # Top level modules:
 # 	deco
-# End time: 15:28:35 on Nov 28,2022, Elapsed time: 0:00:00
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/top.sv
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/top.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:36 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/top.sv 
+# Start time: 12:24:36 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/top.sv 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 15:28:36 on Nov 28,2022, Elapsed time: 0:00:00
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/simtop.sv
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/simtop.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:36 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/simtop.sv 
+# Start time: 12:24:36 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/simtop.sv 
 # -- Compiling module simtop
 # 
 # Top level modules:
 # 	simtop
-# End time: 15:28:36 on Nov 28,2022, Elapsed time: 0:00:00
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/regfile.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:36 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv 
+# Start time: 12:24:36 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 15:28:36 on Nov 28,2022, Elapsed time: 0:00:00
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv
+vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/hexdriver.sv
 # QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:36 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/regfile.sv 
-# -- Compiling module regfile
-# 
-# Top level modules:
-# 	regfile
-# End time: 15:28:36 on Nov 28,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/hexdriver.sv
-# QuestaSim-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:28:36 on Nov 28,2022
-# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/hexdriver.sv 
+# Start time: 12:24:36 on Nov 30,2022
+# vlog -reportprogress 300 -work work /acct/lrlamb/Desktop/611/Project4/lab_jb/hexdriver.sv 
 # -- Compiling module hexdriver
 # 
 # Top level modules:
 # 	hexdriver
-# End time: 15:28:36 on Nov 28,2022, Elapsed time: 0:00:00
+# End time: 12:24:36 on Nov 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-restart -f
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading work.simtop(fast)
-# Loading work.top(fast)
-# Loading work.cpu(fast)
-# Loading work.control(fast)
-# Loading work.deco(fast)
-# Loading work.alu(fast)
-# Loading work.regfile(fast)
-# Loading work.hexdriver(fast)
 run
-# ** Warning: (vsim-7) Failed to open readmem file "program.rom" in read mode.
-# No such file or directory. (errno = ENOENT)    : /acct/lrlamb/Desktop/611/Project4/lab_jb/2021F_lab_jb/cpu.sv(58)
-#    Time: 0 ns  Iteration: 0  Instance: /simtop/dut/cpu1
-# Causality operation skipped due to absence of debug database file
-# End time: 15:30:07 on Nov 28,2022, Elapsed time: 0:02:46
-# Errors: 0, Warnings: 1
+#  36
+# End time: 12:24:45 on Nov 30,2022, Elapsed time: 0:00:30
+# Errors: 0, Warnings: 0

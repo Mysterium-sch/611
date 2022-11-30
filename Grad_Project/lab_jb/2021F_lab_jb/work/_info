@@ -21,7 +21,7 @@ OL;O;2020.1;71
 R0
 valu
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1669671337
+Z3 !s110 1669816737
 !i10b 1
 !s100 Fz;21dl2PMZ6MFeGeLCUd1
 Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -32,13 +32,13 @@ R0
 w1646062652
 8/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
 F/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv
-!i122 9
+!i122 74
 L0 7 48
 Z6 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1669671337.000000
+Z7 !s108 1669816737.000000
 !s107 /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/alu.sv|
 !i113 0
@@ -57,7 +57,7 @@ R0
 w1668965113
 8/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
 F/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/control.sv
-!i122 10
+!i122 76
 L0 1 318
 R6
 r1
@@ -82,7 +82,7 @@ R0
 w1669131170
 8/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
 F/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/cpu.sv
-!i122 11
+!i122 75
 L0 1 173
 R6
 r1
@@ -107,7 +107,7 @@ R0
 w1668632748
 8/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
 F/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/deco.sv
-!i122 12
+!i122 77
 L0 1 44
 R6
 r1
@@ -121,7 +121,7 @@ R8
 R1
 vhexdriver
 R2
-Z9 !s110 1669671338
+R3
 !i10b 1
 !s100 kYW5G5_Q[@2?@Bn>cWo823
 R4
@@ -132,7 +132,7 @@ R0
 w1668632889
 8/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
 F/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/hexdriver.sv
-!i122 13
+!i122 81
 L0 1 33
 R6
 r1
@@ -146,7 +146,7 @@ R8
 R1
 vregfile
 R2
-R9
+R3
 !i10b 1
 !s100 hZFD``j7Ql^5HncLKdSaJ1
 R4
@@ -157,13 +157,13 @@ R0
 w1669131783
 8/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
 F/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv
-!i122 16
+!i122 80
 L0 3 104
 R6
 r1
 !s85 0
 31
-Z10 !s108 1669671338.000000
+R7
 !s107 /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/regfile.sv|
 !i113 0
@@ -171,7 +171,7 @@ R8
 R1
 vsimtop
 R2
-R9
+R3
 !i10b 1
 !s100 0z2iP=36M7eRc4bG0[8]:0
 R4
@@ -182,13 +182,13 @@ R0
 w1669131254
 8/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
 F/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv
-!i122 15
+!i122 79
 L0 6 56
 R6
 r1
 !s85 0
 31
-R10
+R7
 !s107 /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/simtop.sv|
 !i113 0
@@ -196,7 +196,7 @@ R8
 R1
 vtop
 R2
-R9
+R3
 !i10b 1
 !s100 :Y9C<O6NbEaWHS?2]:0PY3
 R4
@@ -207,13 +207,13 @@ R0
 w1668631636
 8/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
 F/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv
-!i122 17
+!i122 78
 L0 6 106
 R6
 r1
 !s85 0
 31
-R10
+R7
 !s107 /acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv|
 !s90 -reportprogress|300|-work|work|/acct/lrlamb/Desktop/611/Grad_Project/lab_jb/2021F_lab_jb/top.sv|
 !i113 0
