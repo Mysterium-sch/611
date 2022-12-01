@@ -1,0 +1,6 @@
+Time Trials
+
+Lab 4: SQRT(17) - 5925 ns
+Grad Project: SQRT (17) - 4495 ns
+
+Speed up: 1.318
