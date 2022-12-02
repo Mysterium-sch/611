@@ -43,7 +43,7 @@ logic [31:0] R_EX_1;
 logic [31:0] R_WB_1;
 logic [31:0] R_EX_2;
 logic [31:0] R_WB_2;
-logic zero_1;
+logic zero;
 logic zero_2;
 
 // Devices
@@ -108,13 +108,13 @@ assign mux1_2 = (alusrc_EX_2 == 2'b1) ? se_2 : readdata2_2;
 
 
 
-alu alu1_1 (.A(readdata1_1), .B(mux1_1), .op(aluop_EX_1), .R(R_EX_1), .zero(zero_1));
+alu alu1_1 (.A(readdata1_1), .B(mux1_1), .op(aluop_EX_1), .R(R_EX_1), .zero(zero));
 alu alu1_2 (.A(readdata1_2), .B(mux1_2), .op(aluop_EX_2), .R(R_EX_2), .zero(zero_2));
 
 // intialize alu
-	assign pcsrc_EX = (stall_EX_1 == 1'b1) ? 2'b0 : (instr_EX_1[6:0] == 7'b1100011) ? 
-			    ((instr_EX_1[14:12] == 3'b0) ? (R_EX_1 == 32'b0 ? 2'b1 : 2'b0) : ((instr_EX_1[14:12] == 3'b1) ? (R_EX_1 !== 32'b0 ? 2'b1 : 2'b0) : (instr_EX_1[14:12] == 3'b100) ? (R_EX_1 == 32'b1 ? 2'b1 : 2'b0) : (instr_EX_1[14:12] == 3'b101) ? (R_EX_1 == 32'b0 ? 2'b1 : 2'b0) : (instr_EX_1[14:12] == 3'b110) ? (R_EX_1 == 32'b1 ? 2'b1 : 2'b0) : (instr_EX_1[14:12] == 3'b111) ? (R_EX_1 == 32'b0 ? 2'b1 : 2'b0) : 2'b0))
-			    : ((instr_EX_1[6:0] == 7'b1100111) ? 2'b11 : ((instr_EX_1[6:0] == 7'b1101111) ? 2'b10 : 2'b0));
+	assign pcsrc_EX = (stall_EX == 1'b1) ? 2'b0 : (instr_EX[6:0] == 7'b1100011) ? 
+			  ((instr_EX[14:12] == 3'b0) ? (zero == 1'b1 ? 2'b1 : 2'b0) : ((instr_EX[14:12] == 3'b1) ? (zero == 1'b0 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b100) ? (R_EX[0] == 1'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b101) ? (zero == 1'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b110) ? (R_EX[0] == 1'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b111) ? (zero == 1'b1 ? 2'b1 : 2'b0) : 2'b0))
+								: ((instr_EX[6:0] == 7'b1100111) ? 2'b11 : ((instr_EX[6:0] == 7'b1101111) ? 2'b10 : 2'b0));
 	
 	assign stall_FETCH_1 = (pcsrc_EX[1:0] == 2'b0) ? 1'b0 : 1'b1;
 
