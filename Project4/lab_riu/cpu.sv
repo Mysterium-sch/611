@@ -87,7 +87,7 @@ alu alu1 (.A(readdata1), .B(mux1), .op(aluop_EX), .R(R_EX), .zero(zero));
 
 // intialize alu
 	assign pcsrc_EX = (stall_EX == 1'b1) ? 2'b0 : (instr_EX[6:0] == 7'b1100011) ? 
-					((instr_EX[14:12] == 3'b0) ? (R_EX == 32'b0 ? 2'b1 : 2'b0) : ((instr_EX[14:12] == 3'b1) ? (R_EX !== 32'b0 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b100) ? (R_EX == 32'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b101) ? (R_EX == 32'b0 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b110) ? (R_EX == 32'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b111) ? (R_EX == 32'b0 ? 2'b1 : 2'b0) : 2'b0))
+			  ((instr_EX[14:12] == 3'b0) ? (zero == 1'b1 ? 2'b1 : 2'b0) : ((instr_EX[14:12] == 3'b1) ? (zero == 1'b0 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b100) ? (R_EX[0] == 1'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b101) ? (zero == 1'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b110) ? (R_EX[0] == 1'b1 ? 2'b1 : 2'b0) : (instr_EX[14:12] == 3'b111) ? (zero == 1'b1 ? 2'b1 : 2'b0) : 2'b0))
 								: ((instr_EX[6:0] == 7'b1100111) ? 2'b11 : ((instr_EX[6:0] == 7'b1101111) ? 2'b10 : 2'b0));
 	
 	assign stall_FETCH = (pcsrc_EX[1:0] == 2'b0) ? 1'b0 : 1'b1;
